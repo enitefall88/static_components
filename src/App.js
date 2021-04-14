@@ -1,4 +1,5 @@
-import './App.css';
+import './App.css'
+import * as PT from "prop-types"
 
 function App() {
     return <div>
@@ -7,11 +8,14 @@ function App() {
         <ProgressBar styleWidth="50%"/>
         <ProgressBar styleWidth="75%"/>
         <ProgressBar styleWidth="100%"/>
-
+<ProgressBar/>
     </div>
 
 }
 
+ProgressBar.propTypes = {
+ styleWidth: PT.oneOf(["0%","25%","50%", "75%", "100%"]).isRequired
+}
 
 function ProgressBar({styleWidth}) {
     return <div className="progress">
@@ -23,4 +27,4 @@ function ProgressBar({styleWidth}) {
     </div>
 }
 
-export default App;
+export default App
