@@ -1,25 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    return <div>
+        <ProgressBar styleWidth="0%"/>
+        <ProgressBar styleWidth="25%"/>
+        <ProgressBar styleWidth="50%"/>
+        <ProgressBar styleWidth="75%"/>
+        <ProgressBar styleWidth="100%"/>
+
     </div>
-  );
+
+}
+
+
+function ProgressBar({styleWidth}) {
+    return <div className="progress">
+        <div className="progress-bar" role="progressbar" style={{width: `${styleWidth}`}} aria-valuenow="25"
+             aria-valuemin="0"
+             aria-valuemax="100"></div>
+
+        {styleWidth}
+    </div>
 }
 
 export default App;
